@@ -1,0 +1,75 @@
+:root {
+  --primary-color: #0b1c22;
+  --secondary-color: #885ae1;
+  --tertiary-color: #dfe3e6;
+  --quaternary-color: #7844dd;
+  --quinary-color: #692fd9;
+}
+
+body {
+  overflow: hidden;
+  background: #0b1c22;
+}
+.container {
+  position: absolute;
+  left: calc(50% - 50px / 2);
+  top: calc(50% - 50px / 2);
+  animation: rotate 10s linear infinite forwards;
+}
+.planet {
+  position: relative;
+  border-radius: 100%;
+  background-color: var(--secondary-color);
+  width: 50px;
+  height: 50px;
+  box-shadow: inset -11.1111111111px -11.1111111111px 0px
+    var(--quaternary-color);
+}
+.planet:before {
+  position: absolute;
+  top: 7.1428571429px;
+  left: 16.6666666667px;
+  content: "";
+  background: var(--quinary-color);
+  border-radius: 100%;
+  width: 7.1428571429px;
+  height: 7.1428571429px;
+  display: block;
+}
+.planet:after {
+  position: absolute;
+  top: 21.6666666667px;
+  left: 9.2857142857px;
+  content: "";
+  background: var(--quinary-color);
+  border-radius: 100%;
+  width: 16.6666666667px;
+  height: 16.6666666667px;
+  display: block;
+}
+.moon {
+  position: absolute;
+  border-radius: 100%;
+  background-color: var(--tertiary-color);
+  width: 11.1111111111px;
+  height: 11.1111111111px;
+  animation: orbit 2s ease-in-out infinite;
+  transform: translate(-16.6666666667px, -16.6666666667px);
+}
+@keyframes orbit {
+  20% {
+    z-index: 10;
+  }
+  50% {
+    transform: translate(50px, 50px);
+    z-index: -1;
+  }
+  100% {
+    z-index: -1;
+  }
+}
+@keyframes rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
